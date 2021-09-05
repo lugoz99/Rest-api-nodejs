@@ -22,8 +22,8 @@ app.get('/', (req, res, next) => {
 
 const userRoutes = require('./routes/user.routes');
 userRoutes(app);
-// tkFn = require('./middleware/verifyToken');
-// app.use(tkFn);
+tkFn = require('./middleware/verifyToken');
+app.use(tkFn);
 const studentRoutes = require('./routes/student.routes');
 studentRoutes(app);
 const teacherRoutes = require('./routes/teacher.routes');
@@ -32,6 +32,7 @@ const periodRoutes = require('./routes/period.routes');
 periodRoutes(app);
 const courseRoutes = require('./routes/course.routes');
 courseRoutes(app);
+
 const vehicleRoutes = require('./routes/vehicle.routes');
 vehicleRoutes(app);
 
